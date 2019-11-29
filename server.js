@@ -63,7 +63,7 @@ getlocation(req.query.data)
    
    
    function getWeather (query) {
-     const url = `https://api.darksky.net/forecast/${process.env.DARKSKY_API_KEY}/${query.latitude},${query.longitude}`;
+     const url = `https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${query.latitude},${query.longitude}`;
      return superagent.get(url)
      .then( data => {
        let weather = data.body;
@@ -86,7 +86,7 @@ getlocation(req.query.data)
         .then (eventData => res.status(200).json(eventData) );
     };
     function getEventINFO (query) {
-    const url = `http://api.eventful.com/json/events/search?app_key=${process.env.EVENTS_API}&location=${query.formatted_query}`;
+    const url = `http://api.eventful.com/json/events/search?app_key=${process.env.EVENTBRITE_API_KEY}&location=${query.formatted_query}`;
     return superagent.get(url)
     .then( data => {
       let eventl = JSON.parse(data.text);
