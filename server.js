@@ -26,7 +26,9 @@ app.get('/weather', weatherHanddler);
 app.get('/events', eventHanddler);
 
 
-//////////////////Location////////////////////
+//////////////////////////////////////////////////------------ Location------------/////////////////////////////Sohad/
+
+
 
   function locationHandler(req,res){
 getlocation(req.query.data)
@@ -53,7 +55,10 @@ getlocation(req.query.data)
 
 
 
-/////////////////Weather///////////////////////
+
+
+//////////////////////////////////////////////////------------ Weather------------/////////////////////////////Sohad/
+
   function weatherHanddler(req,res) {
     getWeather(req.query.data)
        .then (weatherData => res.status(200).json(weatherData) );
@@ -79,8 +84,9 @@ getlocation(req.query.data)
       
     }
 
+//////////////////////////////////////////////////------------ Event------------/////////////////////////////Sohad/
 
-////////////Event/////////////////////////
+
     function eventHanddler(req,res) {
      getEventINFO(req.query.data)
         .then (eventData => res.status(200).json(eventData) );
